@@ -13,6 +13,7 @@
 
 ###  웹폼
 - 웹 폼 제출 시 구글 스프레드 시트에 내용 저장
+![image](https://github.com/user-attachments/assets/1d85483b-c1ec-485e-831c-2ad0356056dd)
 
 - 웹 폼 제출 시 메일로 제출 내용 전송
   ![image](https://github.com/user-attachments/assets/761b6bef-d2fd-4591-87ee-36a12ed8e0b9)
