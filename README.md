@@ -11,6 +11,13 @@
 - `media/`: 프로필 사진, 기술 스택 이미지 포함
 - `style.css`: 웹페이지의 전체 스타일 정의
 
+###  웹폼
+- 웹 폼 제출 시 구글 스프레드 시트에 내용 저장
+
+- 웹 폼 제출 시 메일로 제출 내용 전송
+  ![image](https://github.com/user-attachments/assets/761b6bef-d2fd-4591-87ee-36a12ed8e0b9)
+
+
 ##  주요 내용
 - 자기소개 (ABOUT ME)
 - 사용 가능한 기술 소개 (I CAN DO)
