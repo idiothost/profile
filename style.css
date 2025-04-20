@@ -1,0 +1,70 @@
+body { /* 전체 페이지 기본 스타일 설정 */
+    font-family: sans-serif; /*폰트 설정*/
+    background-color: #f5f5f5; /*배경색 설정*/
+    color: #333; /*글자색 설정*/
+    margin: 0; /* 브라우저 여백 제거 */
+    padding: 0; /*안쪽 여백 제거*/
+  }
+  
+  header { /*헤더 영역 스타일*/
+    background-color: #004080; /*배경색 설정*/
+    color: white; /*글자 색 설정*/
+    padding: 20px; /*위아래 여백 20px 설정 */
+    text-align: center; /* 가운데 정렬 */
+  }
+  
+  nav ul { 
+    list-style: none; /* 기본 목록의 점 제거 */
+    padding: 0; /* 안쪽 여백 제거 */
+    display: flex; /* 가로로 배치 */
+    justify-content: center; /* 가운데 정렬 */
+    gap: 20px; /* 항목 사이 간격 20px 설정 */
+    margin: 10px 0 0 0; /* 위쪽 여백만 설정, 나머지는 0 */
+  }
+  
+  nav ul li a {
+    color: white; /* 링크 글자색 설정 */
+    text-decoration: none; /* 밑줄 제거 */
+    font-weight: bold; /*글씨 두껍게 설정 */
+  }
+
+  li:hover { /*리스트 항목에 마우스 올렸을 때 */
+    transform: scale(1.05); /* 확대 */
+  }
+  
+  main { /* 메인 부분 스타일 설정 */
+    max-width: 800px; /*최대 너비 설정 */
+    margin: 30px auto; /* 위아래 여백 30px, 좌우 가운데 정렬 설정 */
+    padding: 20px; /* 내부 여백 설정 */
+    background-color: white; /* 배경색 설정 */
+  }
+  
+  section { /* 섹션 간의 여백 설정 */
+    margin-bottom: 40px; /* 각 섹션 아래 여백 설정 */
+  }
+  
+  h2 { /*h2 영역 스타일 */
+    border-bottom: 2px solid #004080; /* 밑줄을 파란색으로 두껍게 설정정*/
+    padding-bottom: 5px; /* 밑줄과 글자 사이 여백 설정 */
+    color: #004080; /* 글자색 설정 */
+  }
+  
+  .skills {
+    display: flex; /* 가로 나열 */
+    flex-wrap: wrap; /* 화면 크기 작을 시 자동 줄바꿈 */
+    gap: 10px; /* 아이템 사이의 간격 설정 */
+    justify-content: center; /* 가운데 정렬 */
+  }
+
+  .skills img {
+    height: auto; /* 비율 유지 */
+    object-fit: contain; /* 이미지 안 잘리게 */
+  }
+  
+  footer { /* 푸터 영역 스타일 설정 */
+    background-color: #eee; /* 배경색 설정 */
+    text-align: center; /* 가운데 정렬 */
+    padding: 15px; /* 안쪽 여백 설정 */
+    font-size: 0.9em; /* 글자 크기 살짝 작게 조정 */
+  }
+  

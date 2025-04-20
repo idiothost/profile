@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8"> <!--메타데이터를 통해 페이지 작성자, 설명, 키워드를 나타냄-->
+  <meta name="author" content="유다현"> <!--페이지 작성자-->
+  <meta name="description" content="덕성여대 디지털소프트웨어공학부 유다현의 웹 포트폴리오입니다."> 
+  <meta name="keywords" content="인터넷기초04, 웹 페이지 개발, 포트폴리오">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>유다현의 포트폴리오</title>
+  <link rel="stylesheet" href="style.css"> <!--style.css 파일을 불러와 style을 적용용-->
+</head>
+<body>
+  <header>
+    <h1>유다현의 과제#1 포트폴리오 [인터넷기초04]</h1>
+    <!-- 목차 (앵커로 연결) -->
+    <nav>
+      <ul>
+        <!--각각 id가 profile, programming, projects, contact인 항목으로 이동-->
+        <li><a href="#profile">ABOUT ME</a></li>
+        <li><a href="#programming">I CAN DO</a></li>
+        <li><a href="#projects">PROJECT</a></li>
+        <li><a href="#contact">CONTACT</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!--  프로필 -->
+    <section id="profile">
+      <h2>ABOUT ME</h2>
+      <!--프로필 이미지를 media 파일에서 불러오고, 너비 150으로 설정-->
+      <img src="../포트폴리오/media/profile.jfif" alt="프로필 이미지" width="150"> 
+      <h4>
+        이름: 유다현<br>
+        나이: 만 20세<br>
+        학력: 덕성여자대학교 디지털소프트웨어공학부 재학<br>
+        희망 진로: 빅데이터, 인공지능
+        취미: 야구 시청
+      </h4>
+    </section>
+
+    <!-- 가능한 프로그램 소개 -->
+    <section id="programming">
+      <h2>I CAN DO</h2>
+      <div class="skills">
+        <img src="../포트폴리오/media/python.png" alt="Python 로고" width="100" height="120">
+        <img src="../포트폴리오/media/c.png" alt="C 언어 로고" width="200" height="120">
+        <img src="../포트폴리오/media/C++.svg" alt="C++ 로고" width="100">
+        <img src="../포트폴리오/media/인기초.jpeg" alt="HTML, CSS, JavaScript 로고" width="300">
+        <img src="../포트폴리오/media/mysql.svg" alt="MySQL 로고" width="200">
+      </div>
+    </section>
+
+    <!-- 프로젝트 -->
+    <section id="projects">
+      <h2>프로젝트</h2>
+      <ol>
+        <li>
+          <h3>덕성여대 근처 놀거리 소개</h3>
+          <p>덕성여대 주변의 엔터테인먼트 공간을 소개하는 웹페이지입니다.</p>
+          <p><a href="https://idiothost.github.io/duksung_entertainment/">🔗 웹페이지 보기</a></p> <!--github로 호스팅해 웹페이지 바로 연결-->
+          <p><a href="https://github.com/idiothost/duksung_entertainment/">🔗 GitHub 저장소</a></p>
+        </li>
+      </ol>
+    </section>
+
+    <!--  연락처 -->
+    <section id="contact">
+      <h2>연락처</h2>
+      <ul>
+        <li>이메일 : ydh7105@duksung.ac.kr</li>
+        <li>GitHub : <a href="https://github.com/idiothost">https://github.com/idiothost</a></li>
+        <li>웹 폼 : <a href="">저에게 문의하실 사항이 있다면 이곳을 클릭해주세요.</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <!-- 항상 고정된 꼬리말 (푸터) -->
+  <footer>
+    제작자: 유다현 | 이메일: ydh7105@duksung.ac.kr<br>
+    이 포트폴리오는 인터넷기초[04] 과제#1로 제작되었습니다.
+  </footer>
+</body>
+</html>

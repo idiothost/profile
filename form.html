@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Form 테스트1</title>
+    <style>
+      h1 {
+        text-align: center;
+        color: #1256b0;
+      }
+      .container {
+        display: flex;
+        justify-content: center;
+        /* text-align: center; */
+        margin: 10px;
+        padding: 10px;
+      }
+      #form1 {
+        background-color: #f0f8ff;
+        width: 400px;
+        margin: 10px;
+        padding: 10px;
+      }
+      label {
+        display: block;
+        margin: 10px 0 5px;
+      }
+    </style>
+    <script>
+      function submitForm1(event) {
+          event.preventDefault();
+
+          const email = document.getElementById("form1_email_id").value;
+          const name = document.getElementById("form1_name_id").value;
+          const area = document.getElementById("form1_area_id").value;
+          
+          const purposeList = []
+          const purpose1 = document.getElementById("form1_purpose_id1").checked? purposeList.push(document.getElementById("form1_purpose_id1").value):"";
+          const purpose2 = document.getElementById("form1_purpose_id2").checked? purposeList.push(document.getElementById("form1_purpose_id2").value):"";
+          const purpose3 = document.getElementById("form1_purpose_id3").checked?purposeList.push(document.getElementById("form1_purpose_id3").value):"";
+          const purpose4 = document.getElementById("form1_purpose_id4").checked? purposeList.push(document.getElementById("form1_purpose_id4").value):"";
+          const purpose_final = purposeList.join(',')
+
+          let contact = '';
+
+          if (document.getElementById("form1_contact_id1").checked) {
+              contact = document.getElementById("form1_contact_id1").value;
+          } else if (document.getElementById("form1_contact_id2").checked) {
+            contact = document.getElementById("form1_contact_id2").value;
+          } else if (document.getElementById("form1_contact_id3").checked) {
+            contact = document.getElementById("form1_contact_id3").value;
+          }
+
+          const subject = document.getElementById("form1_subject_id").value;
+          const message = document.getElementById("form1_message_id").value;
+
+          fetch("https://script.google.com/macros/s/AKfycbyWRaeAVE1wj-fXlq26h4OdgV7yfghHEYasMwiljWlF9DTKEKqiVe3WS_ZxVJyXJshwuA/exec", {
+              method: "POST",
+              mode: "no-cors",
+              headers: {
+                  "Content-Type": "application/x-www-form-urlencoded"
+              },
+              body: `email=${encodeURIComponent(email)}&name=${encodeURIComponent(name)}&area=${encodeURIComponent(area)}&purpose=${encodeURIComponent(purpose_final)}&contact=${encodeURIComponent(contact)}&subject=${encodeURIComponent(subject)}&message=${encodeURIComponent(message)}`
+          }).then(response => {
+              alert("정보가 성공적으로 전송되었습니다!");
+          }).catch(error => {
+              alert("전송 실패: " + error.message);
+          });
+      }
+  </script>
+  </head>
+  <h1>CONTACT WEB FORM</h1>
+  <div class="container">
+    <div id="form1">
+      <form id="form1_id" name="form1_name" action="https://script.google.com/macros/s/AKfycbyWRaeAVE1wj-fXlq26h4OdgV7yfghHEYasMwiljWlF9DTKEKqiVe3WS_ZxVJyXJshwuA/exec" method="POST" onsubmit="submitForm1(event)">
+        <fieldset>
+          <legend>기본 정보</legend>
+          <label for="email">이메일:<br>
+            <input type="email" id="form1_email_id" name="form1_email_name" placeholder="id@duksung.ac.kr" required>
+          </label><br>
+          
+          <label>이름:<br>
+            <input type="text" id="form1_name_id" name="form1_name_name" placeholder="홍길동" required>
+          </label><br>
+          
+          관심 분야: <br>
+          <input type="text" id = "form1_area_id" name="form1_area_name" list="areas" placeholder="선택 또는 입력"><br>
+          <datalist id="areas">
+              <option value="프론트엔드">
+              <option value="백엔드">
+              <option value="인공지능">
+              <option value="빅데이터">
+          </datalist>
+          <br>
+        </fieldset>
+        <fieldset>
+          <legend>기타 정보</legend>
+          <br>
+
+          연락 목적을 선택하세요:<br>
+          <label>협업 제안<input type="checkbox" name="form1_drink_name" id="form1_purpose_id1" value="협업제안"></label>
+          <label>채용 제안<input type="checkbox" name="form1_drink_name" id="form1_purpose_id2" value="채용제안"></label>
+          <label>포트폴리오 피트백<input type="checkbox" name="form1_drink_name" id="form1_purpose_id3" value="피드백"></label>
+          <label>기타<input type="checkbox" name="form1_purpose_name" id="form1_purpose_id4" value="기타"></label><br>
+
+          연락 방법:<br>
+          <label>이메일<input type="radio" name="form1_contact_name" id="form1_contact_id1" value="이메일"></label>
+          <label>전화<input type="radio" name="form1_contact_name"  id="form1_contact_id2" value="전화"></label>
+          <label>SNS<input type="radio" name="form1_contact_name"  id="form1_contact_id3" value="SNS"></label>
+          <br>
+
+          좋아하는 과목:<br>
+          <select name="form1_subject_name" id="form1_subject_id">
+              <option value="인터넷기초">인터넷기초</option>
+              <option value="웹프로그래밍">웹프로그래밍</option>
+              <option value="자료구조">자료구조</option>
+          </select><br><br>
+          <label>한마디:<br>
+            <textarea rows=4 id="form1_message_id" name="form1_message_name" placeholder="여기에 입력하세요..." required></textarea>
+          </label><br>
+          <button type="submit">제출</button>
+        </fieldset>
+      </form>
+    </div>
+  </div>
+</html>
